@@ -1,0 +1,256 @@
+:root {
+  color-scheme: light;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  color: #202b32;
+  background: #f3f6f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --color-ink: #202b32;
+  --color-muted: #5d6a70;
+  --color-line: #d6dfda;
+  --color-paper: #ffffff;
+  --color-green: #176b55;
+  --color-green-dark: #10523f;
+  --color-red: #a33c36;
+  --color-focus: #e3a62f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+header {
+  padding: 1.4rem max(1.25rem, calc((100% - 1160px) / 2));
+  color: #ffffff;
+  background: #176b55;
+  border-bottom: 5px solid #e3a62f;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 1160px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+main {
+  width: min(1160px, calc(100% - 2.5rem));
+  margin: 2rem auto 4rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+}
+
+section:first-child dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  background: var(--color-line);
+  border: 1px solid var(--color-line);
+}
+
+section:first-child dl div {
+  padding: 1rem 1.25rem;
+  background: var(--color-paper);
+}
+
+dt {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+dd {
+  margin: 0.35rem 0 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+section:nth-of-type(2) > div:first-of-type {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+select,
+input,
+textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  border: 1px solid #aebbb4;
+  border-radius: 3px;
+}
+
+section:nth-of-type(2) > div:first-of-type select {
+  width: auto;
+  min-width: 9rem;
+}
+
+button {
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  color: #ffffff;
+  background: var(--color-green);
+  border: 1px solid var(--color-green);
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--color-green-dark);
+  border-color: var(--color-green-dark);
+}
+
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  background: var(--color-paper);
+}
+
+section:nth-of-type(2) {
+  overflow-x: auto;
+}
+
+th,
+td {
+  padding: 0.8rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--color-line);
+}
+
+th {
+  color: #ffffff;
+  background: #35464a;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+td {
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 820px;
+}
+
+form > div {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+}
+
+form > div:nth-child(4),
+form > div:nth-child(5),
+form > div:nth-child(6) {
+  grid-column: 1 / -1;
+}
+
+textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+form button {
+  justify-self: start;
+}
+
+#cancel-edit-button {
+  color: var(--color-ink);
+  background: #ffffff;
+  border-color: #9aa8a0;
+}
+
+#cancel-edit-button:hover {
+  background: #e9efeb;
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 1.1rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  main {
+    width: calc(100% - 2rem);
+    margin-top: 1.4rem;
+  }
+
+  section:first-child dl {
+    grid-template-columns: 1fr;
+  }
+
+  section:first-child dl div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  dd {
+    font-size: 1.35rem;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form > div,
+  form > div:nth-child(n) {
+    grid-column: 1;
+  }
+}
